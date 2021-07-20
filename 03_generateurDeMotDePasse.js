@@ -7,6 +7,7 @@ let char = false;
 let numbers = false;
 let upper = false;
 const nbChar = 8;
+
 /**
  * Function which return a random number between min and max
  * @param min
@@ -14,7 +15,7 @@ const nbChar = 8;
  * @returns {number}
  */
 function createRandom(min, max) {
-    return answer = Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 /**
@@ -82,10 +83,17 @@ function verifPassword(passwordArray) {
     //Return the new pass
     return passwordArray;
 }
+
 //For every character we put it in our array 'passwordStr'
-for (let i = 0; i < nbChar; i++) {
-    passwordStr.push(createChar());
+if (nbChar !== 8) {
+    console.log("8 caractères autorisés")
+
+} else {
+    for (let i = 0; i < nbChar; i++) {
+        passwordStr.push(createChar());
+    }
 }
+
 //If there isn't every character we want
 if (!char || !numbers || !upper) {
     //We create a new pass
